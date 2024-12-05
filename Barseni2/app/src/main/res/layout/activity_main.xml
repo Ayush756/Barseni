@@ -1,147 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:scrollbars="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <ScrollView
+            android:layout_width="350dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal">
+        </ScrollView>
 
         <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="<-"
+            android:textColor="@color/blue"
+            android:background="@null"
+            android:textStyle="bold"
+            android:onClick="previousMonthAction"
+            android:textSize="20sp"
+            android:textAlignment="viewEnd" />
+            <TextView
+                android:id="@+id/monthYearTV"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Feb 2021"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="->"
+                android:textColor="@color/blue"
+                android:background="@null"
+                android:textStyle="bold"
+                android:onClick="nextMonthAction"
+                android:textSize="20sp"
+                android:textAlignment="viewStart"/>
+
+            </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SUN"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MON"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TUE"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="WED"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="THUR"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="FRI"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SAT"
+            android:textAlignment="center"
+            android:textColor="@color/grey"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/calendarRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent"/>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                app:cardElevation="5dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="@color/white">
+    </LinearLayout>
 
-                <android.widget.HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <!-- LinearLayout inside HorizontalScrollView to hold child items -->
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <!-- Add any child views here (e.g., ImageView, TextView, etc.) -->
-                        <ImageView
-                            android:src="@drawable/basic"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginEnd="16dp" />
-
-                        <ImageView
-                            android:src="@drawable/basic"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginEnd="16dp" />
-
-                        <ImageView
-                            android:src="@drawable/basic"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginEnd="16dp" />
-
-                        <!-- Add more items as needed -->
-                    </LinearLayout>
-                </android.widget.HorizontalScrollView>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                app:cardElevation="5dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="@color/white">
-
-                <ImageView
-                    android:layout_width="1in"
-                    android:layout_height="1in"
-                    android:layout_margin="5dp"
-                    android:background="@color/white"
-                    android:elevation="3dp"
-                    android:src="@drawable/basic"/>
+</ScrollView>
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="1.1in"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:text="This Is Vertical ScrollView"/>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                app:cardElevation="5dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="@color/white">
-
-                <ImageView
-                    android:layout_width="1in"
-                    android:layout_height="1in"
-                    android:layout_margin="5dp"
-                    android:background="@color/white"
-                    android:elevation="3dp"
-                    android:src="@drawable/basic"/>
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="1.1in"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:text="This Is Vertical ScrollView"/>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                app:cardElevation="5dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="@color/white">
-
-                <ImageView
-                    android:layout_width="1in"
-                    android:layout_height="1in"
-                    android:layout_margin="5dp"
-                    android:background="@color/white"
-                    android:elevation="3dp"
-                    android:src="@drawable/basic"/>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="1.1in"
-                    android:textSize="23sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:textColor="@color/black"
-                    android:text="This Is Vertical ScrollView"/>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
