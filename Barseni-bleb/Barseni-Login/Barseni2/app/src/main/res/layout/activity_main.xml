@@ -26,38 +26,15 @@
                 app:cardCornerRadius="5dp"
                 app:cardBackgroundColor="@color/white">
 
-                <android.widget.HorizontalScrollView
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <!-- LinearLayout inside HorizontalScrollView to hold child items -->
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <!-- Add any child views here (e.g., ImageView, TextView, etc.) -->
-                        <ImageView
-                            android:src="@drawable/basic"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginEnd="16dp" />
-
-                        <ImageView
-                            android:src="@drawable/basic"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginEnd="16dp" />
-
-                        <ImageView
-                            android:src="@drawable/basic"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_marginEnd="16dp" />
-
-                        <!-- Add more items as needed -->
-                    </LinearLayout>
-                </android.widget.HorizontalScrollView>
+                    android:layout_height="200dp"
+                    android:clipToPadding="false"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
