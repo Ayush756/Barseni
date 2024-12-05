@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "675983382613",
+    "project_id": "barseni-f36dc",
+    "storage_bucket": "barseni-f36dc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675983382613:android:5b7223e9a58cd12c0a9cdc",
+        "android_client_info": {
+          "package_name": "com.example.barseni"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGVAOiIu8nHs1UoxMtrKfR9TueEdWd5I8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
